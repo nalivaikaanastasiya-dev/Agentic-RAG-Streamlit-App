@@ -1,0 +1,37 @@
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/_env_example.ipynb
+suggestions for improvement:
+- The provided code is just an example .env file. It does not implement any of the required functionality like building a retriever, agent, or reasoning loop. It's unrelated to the core requirements of the problem.
+- The notebook should contain the agentic RAG pipeline implementation, tool usage, and orchestration logic.
+Correctness: 0%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/agent_rag_pipeline.ipynb
+suggestions for improvement:
+- The code uses `ChatOpenAI` and `OpenAIEmbeddings` with `GROQ_API_KEY`. The instructions suggest using Groq LLM directly via `langchain_groq`.  It should be changed to use Groq's native integration.  The same logic applies to the embeddings if Groq offers embeddings. If not, stick to OpenAI embeddings or another alternative.
+- The Tavily search tool currently returns a simulated response.  You need to replace the placeholder with actual Tavily API calls using the `tavily-python` package.
+- The code uses hardcoded strings in Russian (`"Векторное хранилище создано"`, etc.). While this doesn't affect functionality, it's not ideal for a general-purpose application. Consider internationalization or removing the language-specific logging.
+- Consider adding LangSmith tracing to enable observability and debugging.
+- The current implementation creates the vector database every time the `AgenticRAG` class is initialized. Implement a mechanism to check if the database already exists and load it instead of recreating it every time.
+- Error handling includes generic exception handling. It's better to implement more specific exception handling for different potential errors to improve debugging and error recovery.
+Correctness: 60%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/agentic_rag.ipynb
+suggestions for improvement:
+- The notebook should implement an agent that can call tools, particularly web search using Tavily, as the problem description emphasizes. The current implementation uses RetrievalQA with a local FAISS index which is only part of the requirements.
+- The code currently lacks the agentic part with tool usage for more complex questions. It should incorporate the Tavily tool for web searches when necessary. Libraries such as `langchain.agents` could be used.
+- The code does not handle errors or timeouts gracefully, nor does it log to LangSmith (if enabled). Error handling and LangSmith integration would improve robustness and debugging.
+- Consider restructuring the code into more modular functions and classes for better readability and maintainability.
+- While the code loads API keys from environment variables, consider using a more robust secret management solution for production environments.
+Correctness: 70%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/app_py.ipynb
+suggestions for improvement:
+- The code provided in the notebook appears to be a Streamlit app that loads a PDF document and uses an `AgenticRAG` class (presumably defined elsewhere) to answer questions based on the document's content. However, this code is not directly related to the chapter's requirements. The chapter specifies the use of specific tools (LangChain, Tavily, Groq, Google tools) for building an agentic RAG pipeline, and this notebook does not demonstrate the use of these specific tools and the reasoning -> retrieve -> read -> synthesize loop. Therefore, it does not address the core functionality described in the chapter.
+Correctness: 0%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/requirements_txt.ipynb
+suggestions for improvement:
+- The notebook should contain the agent and RAG pipeline implementation, not just a list of libraries.
+- The notebook should implement the reasoning → retrieve → read → synthesize loop.
+- The notebook needs to be runnable and callable by the Streamlit app.
+Correctness: 0%
+-----
