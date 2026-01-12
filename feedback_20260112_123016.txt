@@ -1,0 +1,27 @@
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/_env_example.ipynb
+suggestions for improvement:
+- The submitted code is just a template for a .env file. It does not implement any of the requested functionalities: building a retriever, an agent with tool calling, orchestrating a reasoning loop, or exposing a Python API for the Streamlit app. It simply provides placeholder values for API keys.
+Correctness: 0%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/agent_rag_pipeline.ipynb
+suggestions for improvement:
+- Consider using a more robust vector database solution or configuration if the application needs to scale or handle more complex data.
+- Improve the error handling within the `create_vectordb` function to provide more specific error messages to the user, guiding them on how to resolve the issue.
+- Implement more comprehensive logging to capture the inputs and outputs of each tool call, which can be useful for debugging and analysis.
+- Refactor the agent initialization to allow more flexibility in configuring the agent's behavior, such as specifying the agent type and prompt templates.
+Correctness: 70%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/app_py.ipynb
+suggestions for improvement:
+- The provided code is in a notebook format which combines the Streamlit application (`app.py`) and potentially the agent/RAG pipeline logic (`agentic_rag.ipynb`). This does not align with the instructions, as `app.py` is meant to be a separate file that calls `agentic_rag.ipynb` (or a corresponding Python file) for the agent logic.
+- The code attempts to load a PDF, which is not explicitly specified in the requirements, which focus on using Tavily, Groq, and optional Google tools for web search and grounding answers.
+- The notebook preview attempts to load `agentic_rag.ipynb` as text, as specified, but the main logic should be in Python files, not just a notebook.
+Correctness: 0%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/requirements_txt.ipynb
+suggestions for improvement:
+- The notebook appears to only list package names, rather than implement any part of the agentic RAG pipeline. The prompt requires building a retriever, agent with tool use, orchestration of reasoning, retrieval and synthesis, exposing a python API, and handling errors. None of these things are accomplished here.
+- The notebook should contain code that addresses the prompt's requirements of creating an agentic RAG pipeline that integrates a retriever, agent, and the ability to call tools (Tavily, Groq).
+- The notebook should implement the reasoning → retrieve → read → synthesize loop with source attribution, as described in the prompt.
+Correctness: 0%
+-----

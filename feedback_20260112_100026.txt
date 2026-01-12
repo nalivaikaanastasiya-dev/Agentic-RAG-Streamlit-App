@@ -1,0 +1,38 @@
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/_env_example.ipynb
+suggestions for improvement:
+- The provided code does not implement the required Agentic RAG pipeline, agent, or Streamlit application logic. It only contains a placeholder `.env` example, which is insufficient to address the core requirements of the task.
+- The notebook provided does not attempt to build a retriever (vector index), an agent that can call tools (e.g., web search), orchestrate reasoning, retrieval, reading and synthesizing with source attribution or expose a clean Python API. The notebook only includes an example .env file.
+Correctness: 0%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/agentic_rag.ipynb
+suggestions for improvement:
+- Implement the agentic reasoning loop as described in the prompt. The current implementation uses RetrievalQA which, while useful, doesn't demonstrate the full 'reasoning → retrieve → read → synthesize' loop that's desired.
+- Integrate the Tavily search tool into the agent's toolset so it can fetch information from the web, rather than relying solely on the provided KB.
+- Improve error handling. Currently, the code asserts that the API keys are set but doesn't handle potential API errors (timeouts, invalid keys, etc.) more gracefully.
+- Consider using LangSmith for logging and tracing to improve debugging and monitoring of the agent's behavior.
+- The model name is hardcoded as "gpt-3.5". Consider using the correct model name for Groq or making it configurable.
+- Incorporate more robust retrieval methods. Using only FAISS with similarity search may not be optimal for all types of questions. Experiment with different retrieval strategies.
+- Implement the agent using LangChain's Agent classes to facilitate the 'tool-using' aspect, this is more aligned with the instructions.
+Correctness: 70%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/app_py.ipynb
+suggestions for improvement:
+- Consider adding more comments to explain specific sections of the code, especially regarding the LangSmith tracing configuration.
+- The code includes error handling for loading the notebook. Consider adding similar handling for other potential points of failure (e.g., API calls if you integrate them directly in this file for testing purposes).
+Correctness: 100%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/gent_rag_pipeline.ipynb
+suggestions for improvement:
+- The notebook should incorporate Tavily search, Groq LLM, and optionally Google tools as the main components, according to the prompt requirements. The provided code uses OpenAI, which is not aligned with the instructions.
+- The notebook must define a clean Python API that the Streamlit app (app.py) can call. The current notebook does not explicitly define such an API.
+- The notebook should include error handling and logging using LangSmith, if enabled.
+- The notebook should implement the specified reasoning → retrieve → read → synthesize loop.
+Correctness: 0%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/requirements_txt.ipynb
+suggestions for improvement:
+- The notebook only contains a list of packages, it doesn't implement any RAG pipeline or agent.
+- The notebook does not attempt to use the specified tools (Tavily, Groq, Google tools).
+- The notebook lacks the core logic of reasoning, retrieving, reading, and synthesizing, and does not include source attribution.
+Correctness: 0%
+-----
