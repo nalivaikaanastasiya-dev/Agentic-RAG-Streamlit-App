@@ -1,0 +1,33 @@
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/requirements_txt.ipynb
+suggestions for improvement:
+- The submitted notebook only lists package names, but it does not implement any of the required functionality, such as building a retriever, agent, or RAG pipeline.
+- The notebook should contain code to interact with Tavily, Groq, and potentially Google tools, as specified in the problem description.
+- The notebook needs to implement the reasoning -> retrieve -> read -> synthesize loop with source attribution.
+- The notebook should expose a clean Python API that the Streamlit app can call.
+- The notebook does not handle any errors or timeouts gracefully, nor does it integrate with LangSmith.
+Correctness: 0%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/app_py.ipynb
+suggestions for improvement:
+- The provided code uses PyPDFLoader, which wasn't explicitly suggested. The instructions hinted at using Tavily search, Groq LLM, and LangChain, which are not directly incorporated in the provided code.
+- The notebook is named 'app_py.ipynb' which is confusing as the 'app.py' file is supposed to load the agent pipeline from 'agentic_rag.ipynb'.
+- The code uses a PDF loader, which is not mentioned in the prompt. The prompt focuses on building a retriever and agent with tool usage (e.g., web search).
+Correctness: 0%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/agentic_rag.ipynb
+suggestions for improvement:
+- Implement the agent with tool usage as specified in the problem description. The current solution only uses RetrievalQA from a static knowledge base.
+- Integrate Tavily search for more comprehensive answers and grounding.
+- Add error handling and logging to LangSmith for better debugging and monitoring.
+- Ensure the solution gracefully handles timeouts.
+Correctness: 70%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/agent_rag_pipeline.ipynb
+suggestions for improvement:
+- The code imports and uses `OpenAIEmbeddings` but the instructions mention using `Groq` LLM. This is a mismatch.
+- The `TavilySearchTool` is a stub and does not integrate with the actual Tavily API. This needs to be a real API call.
+- The notebook's main functionality should be callable from the streamlit app, it's better to separate concerns and create functions that the app.py can call instead of having code directly within the notebook. Especially the environment variables loading and setup.
+- Consider adding error handling to the `create_vectordb` function.
+- The logging could be improved to include more contextual information, especially regarding LangSmith.
+Correctness: 40%
+-----

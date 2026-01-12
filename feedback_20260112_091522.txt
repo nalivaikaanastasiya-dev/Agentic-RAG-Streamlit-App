@@ -1,0 +1,26 @@
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/requirements_txt.ipynb
+suggestions for improvement:
+- The submitted notebook doesn't contain any agent or RAG pipeline. It only lists required packages. It needs to implement the agentic RAG pipeline as described in the problem description to get a higher score.
+- The notebook should implement the reasoning -> retrieve -> read -> synthesize loop.
+- The notebook needs to read from the environment variables the API keys for Groq, Tavily, and optionally Google and Langchain.
+- The notebook needs to expose a Python API that the Streamlit app can call.
+Correctness: 0%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/_env_example.ipynb
+suggestions for improvement:
+- The provided notebook only contains example environment variables and doesn't implement any of the agentic RAG functionality, retriever, agent, tool usage, or source attribution as specified in the problem description. The notebook's content is unrelated to the core tasks outlined in the prompt.
+Correctness: 0%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/app_py.ipynb
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/agentic_rag.ipynb
+suggestions for improvement:
+- The provided notebook structure is unusual. The entire notebook content is embedded within a single code cell as a string representation of a JSON object. This defeats the purpose of using a notebook for interactive development and execution.
+- The notebook contains placeholders for future steps (e.g., adding document loaders, building a vector store, wrapping with an agent loop). While it correctly identifies the necessary components, it doesn't implement them fully. The code initializes Groq LLM and Tavily search tool, which is a good start but incomplete.
+- The notebook uses `langchain_groq` and `tavily-python` as hinted in `app.py`, but lacks the agentic RAG pipeline including vector store.
+- Consider implementing at least a basic RAG pipeline with vector storage (FAISS or Chroma) and a LangChain agent.
+Correctness: 30%
+-----
