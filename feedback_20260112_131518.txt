@@ -1,0 +1,32 @@
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/_env_example.ipynb
+suggestions for improvement:
+- The provided notebook only contains a template `.env` file with placeholder keys. It does not implement any part of the agentic RAG pipeline, retriever, agent with tool calling, reasoning loop, or API as specified in the problem description. Therefore, it fails to address the core requirements of the challenge.
+- The notebook should include code to build the retriever (vector index), an agent that can call tools (e.g., web search), and orchestrate a reasoning → retrieve → read → synthesize loop with source attribution. It should also expose a clean Python API the Streamlit app can call.
+Correctness: 0%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/agent_rag_pipeline.ipynb
+suggestions for improvement:
+- The code should use Groq LLM as requested in the problem statement but it uses ChatOpenAI.
+- Ensure that the agent adheres to the "reasoning → retrieve → read → synthesize" loop as described in the learning objectives.
+- Implement error handling and logging more comprehensively, particularly for timeouts and LangSmith integration as suggested.
+- The provided code is in a notebook format. Converting to .py would be better for integration.
+Correctness: 75%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/agentic_rag.ipynb
+suggestions for improvement:
+- The code doesn't show any implementation details for building the retriever, agent, or orchestration loop as required by the problem description. It only loads documents and attempts to initialize an AgenticRAG class (defined elsewhere) and query it. The main logic required is completely missing.
+Correctness: 0%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/app_py.ipynb
+suggestions for improvement:
+- The provided notebook seems to represent the `app.py` file, rather than the agentic_rag.ipynb as specified in the instructions.
+- The chapter content specifies that the agent should be built with LangChain, Tavily search, Groq LLM, and optionally Google tools. The provided code includes an AgenticRAG class and attempts to load an example document. However, it does not show how these are integrated with the specified tools and LLM.
+- The notebook preview at the end tries to load the agentic_rag.ipynb as text. This is in line with the instructions.
+Correctness: 0%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/requirements_txt.ipynb
+suggestions for improvement:
+- The provided code snippet only lists the packages, it does not implement any of the agentic RAG functionality, retriever or agent, reasoning loop, or API that were specified in the instructions.
+- The notebook does not build the retriever, the agent, the reasoning loop, or expose a Python API for the Streamlit app to call, which are key aspects of the daily challenge.
+Correctness: 0%
+-----
