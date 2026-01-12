@@ -1,0 +1,29 @@
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/_env_example.ipynb
+suggestions for improvement:
+- The submitted code is an example `.env` file, not the actual agentic RAG pipeline implementation as specified by the chapter content.  The chapter asks for a notebook (`agentic_rag.ipynb`) containing the agent/RAG pipeline logic, not just an example environment file.
+- The chapter asks for a Streamlit app (`app.py`) that loads the API keys and runs the agentic RAG pipeline from `agentic_rag.ipynb`. The provided code is not part of this.
+- The chapter specifies the use of Langchain, Tavily, and Groq. The submission does not contain any code that utilizes these libraries to create an agentic RAG pipeline.
+Correctness: 0%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/agent_rag_pipeline.ipynb
+suggestions for improvement:
+- Consider using `os.path.join` for constructing file paths for better cross-platform compatibility.
+- While the code uses environment variables, consider validating that they are actually set before using them to prevent unexpected behavior.
+- The agent is initialized with 'zero-shot-react-description', but it might be beneficial to experiment with other agent types to improve performance.
+- Add more comprehensive error handling, especially around API calls, and provide more informative error messages to the user. Consider implementing retry mechanisms for transient errors.
+Correctness: 70%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/app_py.ipynb
+suggestions for improvement:
+- The provided code in `app.py` does not directly implement the functionalities described in the 'Chapter Content/Questions' requirements. It should load API keys from `.env`, set LangSmith tracing flags, and provide a simulated response initially. The current code attempts to load PDF documents, initialize an agent (presumably from `agentic_rag.ipynb`, but the actual agent logic isn't shown). The notebook preview loading is good.
+- The core agentic RAG pipeline and tool-using agent logic are missing from the provided code. The app calls `agent.get_answer(query)` without any details about how the agent is constructed using LangChain, Tavily, Groq, or Google tools, as suggested by the environment variables.
+- Error handling could be improved. Instead of a generic `except Exception as e:`, specific exceptions should be handled for file loading or API errors.
+- The `agentic_rag.ipynb` file, where the agent logic should reside, is not provided, so the code cannot be evaluated for its RAG and agent capabilities.
+Correctness: 0%
+-----
+URL: https://github.com/nalivaikaanastasiya-dev/Agentic-RAG-Streamlit-App/blob/main/requirements_txt.ipynb
+suggestions for improvement:
+- The submitted notebook only contains a list of packages. It should implement the RAG pipeline and agent logic as described in the problem description. The notebook should include code for building a retriever, an agent with tool-calling capabilities (web search), and orchestrating a reasoning -> retrieve -> read -> synthesize loop.
+- The notebook should define a Python API that the Streamlit app (app.py) can call to get answers. The agent should be built using LangChain, Tavily search, and Groq LLM. Error handling and LangSmith logging (if enabled) should also be included.
+Correctness: 0%
+-----
